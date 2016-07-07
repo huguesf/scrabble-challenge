@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Bag.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;ScrabbleSets&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">ferland.hugues.challenge.scabblesets</a> &gt; <span class="el_source">Bag.java</span></div><h1>Bag.java</h1><pre class="source lang-java linenums">package ferland.hugues.challenge.scabblesets;
+
+import java.util.HashMap;
+
+/**
+ * A bag of letter of the Scrabble game.
+ */
+public class Bag {
+
+<span class="fc" id="L10">    private final HashMap&lt;Character, Integer&gt; content = new HashMap&lt;Character, Integer&gt;() {</span>
+        {
+<span class="fc" id="L12">            put('A', 9);</span>
+<span class="fc" id="L13">            put('B', 2);</span>
+<span class="fc" id="L14">            put('C', 2);</span>
+<span class="fc" id="L15">            put('D', 4);</span>
+<span class="fc" id="L16">            put('E', 12);</span>
+<span class="fc" id="L17">            put('F', 2);</span>
+<span class="fc" id="L18">            put('G', 3);</span>
+<span class="fc" id="L19">            put('H', 2);</span>
+<span class="fc" id="L20">            put('I', 9);</span>
+<span class="fc" id="L21">            put('J', 1);</span>
+<span class="fc" id="L22">            put('K', 1);</span>
+<span class="fc" id="L23">            put('L', 4);</span>
+<span class="fc" id="L24">            put('M', 2);</span>
+<span class="fc" id="L25">            put('N', 6);</span>
+<span class="fc" id="L26">            put('O', 8);</span>
+<span class="fc" id="L27">            put('P', 2);</span>
+<span class="fc" id="L28">            put('Q', 1);</span>
+<span class="fc" id="L29">            put('R', 6);</span>
+<span class="fc" id="L30">            put('S', 4);</span>
+<span class="fc" id="L31">            put('T', 6);</span>
+<span class="fc" id="L32">            put('U', 4);</span>
+<span class="fc" id="L33">            put('V', 2);</span>
+<span class="fc" id="L34">            put('W', 2);</span>
+<span class="fc" id="L35">            put('X', 1);</span>
+<span class="fc" id="L36">            put('Y', 2);</span>
+<span class="fc" id="L37">            put('Z', 1);</span>
+<span class="fc" id="L38">            put('_', 2);</span>
+<span class="fc" id="L39">        }</span>
+    };
+
+<span class="fc" id="L42">    public Bag() {</span>
+<span class="fc" id="L43">    }</span>
+
+    public Integer count(int letter) {
+<span class="fc" id="L46">        return content.get((char)letter);</span>
+    }
+
+    public void remove(int charAsInt) {
+<span class="fc" id="L50">        char c = (char)charAsInt;</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if (content.get(c) == 0) {</span>
+<span class="fc" id="L52">            throw new IllegalStateException(&quot;Invalid input. More &quot;+c+&quot;'s have been taken from the bag than possible.&quot;);</span>
+        }
+<span class="fc" id="L54">        content.put(c, content.get(c) - 1);</span>
+<span class="fc" id="L55">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
